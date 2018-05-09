@@ -1,11 +1,7 @@
-#TODO File anpassen
-#Get OpenJDK Image
-FROM tomcat:alpine
+#Get nginx Image Use alpine for minimal linux
+FROM nginx:alpine
 
-#Make dir for war file
-RUN mkdir /
+#Copy source to nginx folder
+COPY . /usr/share/nginx/html/.
 
-#Set working dir to new folder
-WORKDIR 
-
-#Copy war-file to folder
+EXPOSE 80
