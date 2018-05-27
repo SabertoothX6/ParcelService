@@ -9,21 +9,19 @@ node {
       {
           //Create Variable that holds the info if docker image exists
           IMAGE_EXISTS = sh(
-          script: "docker images -q parcelservice",
+          script: "docker images -q parcelservice-frontend",
           returnStatus : true)
           //Remove the previous build image if it was build before
           if(IMAGE_EXISTS!="")
           {
-              sh "docker rmi -f parcelservice-front"
+              sh "docker rmi -f parcelservice-frontend"
           }
           //Build new container with image parcelservice-frontend
           sh "docker build -t parcelservice-frontend ."
       }
       else
       {
-          //Remove the previous build image
-          bat "docker rmi parcelservice-server"
-          bat "docker build -t parcelservice-server ."
+          //TODO other than unix
       }
 
    }
