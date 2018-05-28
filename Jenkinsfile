@@ -27,7 +27,7 @@ node {
    }
    stage('Deploy to Asset-Server')
    {
-      sh "mv ./web/js/*.js /home/archy/vagrant-example/www/html/js/"
+      sh "mv ./web/js/*.js ./vagrant/www/html/js/"
    }
    /*stage('Run ParcelService-Server')
    {//TODO Befehl ändern
