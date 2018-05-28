@@ -28,7 +28,7 @@ angular.
     	this.calcSize= function($parcel)
     	{
     		var parameter = JSON.stringify($parcel.size);
-    		var url = "rest/parcel/size";
+    		var url = "http://rest/parcel/size";
     		var size = '';
     		$http.post(url, parameter).then(function(data, status, headers, config)
     		{
