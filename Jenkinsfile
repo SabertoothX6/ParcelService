@@ -25,6 +25,10 @@ node {
       }
 
    }
+   stage('Deploy to Asset-Server')
+   {
+      sh "mv ./web/js/*.js ~/vagrant-example/www/html/js/"
+   }
    /*stage('Run ParcelService-Server')
    {//TODO Befehl ändern
       sh "docker run -d -p 8083:80 --name=rest parcelservice"
