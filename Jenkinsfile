@@ -27,7 +27,7 @@ node {
    }
    stage('Deploy to Asset-Server')
    {
-      sh "sshpass -p 'vagrant' scp *.js vagrant@192.168.50.100:/home/vagrant/js"
+      sh "sshpass -p 'vagrant' scp -o StrictHostKeyChecking=no *.js vagrant@192.168.50.100:/home/vagrant/js"
    }
    /*stage('Run ParcelService-Server')
    {//TODO Befehl ändern
