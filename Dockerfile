@@ -4,4 +4,4 @@ FROM nginx:alpine
 #Copy source to nginx folder
 COPY ./web/index.html /usr/share/nginx/html/.
 
-EXPOSE 1200
+EXPOSE 80
