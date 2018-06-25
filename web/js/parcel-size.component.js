@@ -22,7 +22,7 @@ angular.
 
 
     	this.parcel = {
-    		size:{length: '0',width:'0',depth:'0',cat:''}
+    		size:{length: '0',width:'0',depth:'0',cat:'S'}
     	};
     	$rootScope.parcelsize = this.parcel;
     	this.calcSize= function($parcel)
