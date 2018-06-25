@@ -28,7 +28,7 @@ angular.
     	this.calcSize= function($parcel)
     	{
     		var parameter = JSON.stringify($parcel.size);
-    		var url = "http://192.168.56.101:8443/parcel/size";
+    		var url = "www.allgaeu-parcel-service.de:8443/parcel/size";
     		var size = '';
     		$http.post(url, parameter).then(function(data, status, headers, config)
     		{
