@@ -27,7 +27,7 @@ node {
    }
    stage('Deploy to Asset-Server')
    {
-      sh "sshpass -p 'vagrant' scp -o StrictHostKeyChecking=no ./web/js/*.js vagrant@192.168.56.100:/home/vagrant/js"
+      //sh "sshpass -p 'vagrant' scp -o StrictHostKeyChecking=no ./web/js/*.js vagrant@192.168.56.100:/home/vagrant/js"
       sh "docker save parcelservice-frontend > frontend.tar"
       sh "sshpass -p 'vagrant' scp -o StrictHostKeyChecking=no frontend.tar vagrant@192.168.56.100:/home/vagrant/images"
    }
