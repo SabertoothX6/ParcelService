@@ -17,7 +17,7 @@ node {
               sh "docker rmi -f parcelservice-frontend"
           }
           //Build new container with image parcelservice-frontend
-          sh "docker build -t parcelservice-frontend ."
+          sh "docker build -t parcelservice-frontend:test ."
       }
       else
       {
