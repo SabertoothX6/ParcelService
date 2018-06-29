@@ -17,7 +17,7 @@ node {
               sh "docker rmi -f parcelservice-frontend"
           }
           //Build new container with image parcelservice-frontend
-          sh "docker build -t parcelservice-frontend:test ."
+          sh "docker build -t parcelservice-frontend:${currentBuild.number} ."
       }
       else
       {
@@ -28,8 +28,8 @@ node {
    stage('Deploy to Asset-Server')
    {
       //sh "sshpass -p 'vagrant' scp -o StrictHostKeyChecking=no ./web/js/*.js vagrant@192.168.56.100:/home/vagrant/js"
-      sh "docker save parcelservice-frontend > frontend.tar"
-      sh "sshpass -p 'vagrant' scp -o StrictHostKeyChecking=no frontend.tar vagrant@192.168.56.100:/home/vagrant/images"
+      sh "docker save parcelservice-frontend > frontend.${currentBuild.number}.tar"
+      sh "sshpass -p 'vagrant' scp -o StrictHostKeyChecking=no frontend.${currentBuild.number}.tar vagrant@192.168.56.100:/home/vagrant/images"
    }
    /*stage('Run ParcelService-Server')
    {//TODO Befehl ändern
